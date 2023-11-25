@@ -14,3 +14,20 @@ Time taken to calculate num edges
 1.1920928955078125e-06
 Ram usage at end:  1.8
 CPU usage:  0.0
+#################################################################################
+Ram usage at start:  svmem(total=202299236352, available=198812315648, percent=1.7, used=2740183040, free=198080491520, active=821334016, inactive=694214656, buffers=3207168, cached=1475354624, shared=43913216, slab=338571264)
+CPU usage:  0.0
+Time taken to load graph:
+0.7099671363830566
+Ram usage after loading graph/before calculating num_nodes :  svmem(total=202299236352, available=198734794752, percent=1.8, used=2817703936, free=198002970624, active=898781184, inactive=694214656, buffers=3207168, cached=1475354624, shared=43913216, slab=338571264)
+CPU usage:  2.6
+Number of nodes: 144242
+Time taken to calculate num nodes
+5.9604644775390625e-06
+Ram usage after calculating num_nodes/before calculating num_edges :  svmem(total=202299236352, available=198734794752, percent=1.8, used=2817703936, free=198002970624, active=898781184, inactive=694214656, buffers=3207168, cached=1475354624, shared=43913216, slab=338571264)
+CPU usage:  0.0
+Number of edges: 194446
+Time taken to calculate num edges
+1.6689300537109375e-06
+Ram usage at end:  svmem(total=202299236352, available=198734794752, percent=1.8, used=2817703936, free=198002970624, active=898781184, inactive=694214656, buffers=3207168, cached=1475354624, shared=43913216, slab=338571264)
+CPU usage:  0.0
