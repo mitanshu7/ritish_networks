@@ -1,0 +1,16 @@
+Ram usage at start:  1.7
+CPU usage:  0.0
+Time taken to load graph:
+0.7412111759185791
+Ram usage after loading graph/before calculating num_nodes :  1.8
+CPU usage:  2.5
+Number of nodes: 144242
+Time taken to calculate num nodes
+5.7220458984375e-06
+Ram usage after calculating num_nodes/before calculating num_edges :  1.8
+CPU usage:  0.0
+Number of edges: 194446
+Time taken to calculate num edges
+1.1920928955078125e-06
+Ram usage at end:  1.8
+CPU usage:  0.0
