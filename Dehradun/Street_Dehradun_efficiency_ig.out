@@ -1,0 +1,10 @@
+Number of nodes:  58839
+Number of edges:  67925
+The value of messhedness coefficient(alpha) is :  0.07722247244482591
+Number of vertex pairs:  1730984541.0
+Number of edge pairs:  2306868850.0
+The average degree of the network is:  2.308842774350346
+The Probability of the connection in the network is:  3.924067395816217e-05
+Time taken to calculate shortest_path_lengths_matrix using dijkstra algorithm is 309.5013689994812 seconds
+Efficiency of the network is:  0.01939985594445775
+The whole program took 944.4811434745789 seconds to run
