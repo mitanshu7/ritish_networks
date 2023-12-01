@@ -17,87 +17,96 @@ def find_eff(igraph_matrix):
     inner_inverse_sum = np.sum(sp)
     return inner_inverse_sum
 
-##Loading the graph from file
 
-G_ig = ig.Graph.Read("Dehradun_street_network.graphml",format="graphml")
+##Timing the program
 
+start_tic = time()
 
-# Get the number of nodes (vertices)
+##Lists all files in the current working directory when the criteria is matched
 
-num_nodes = G_ig.vcount()
-print("Number of nodes: ", num_nodes)
+file_names = glob('*.graphml') ##Lists all files with the graphml extension
+file_names.sort() ##Sorting them alphabetically
 
+for file in file_names:
 
-# Get the number of edges
+    ##Placeholder for different files
 
-num_edges = G_ig.ecount()
-print("Number of edges: ", num_edges)
-
-
-#Calculating Meshedness coefficient(alpha)
-
-alpha = (num_edges - num_nodes + 1)/(2*num_nodes - 5)
-print("The value of messhedness coefficient(alpha) is : ", alpha)
+    print("#########################################################################################################")
+    print(f"Processing file {file}")
 
 
-# Calculating Number of vertex pairs =  n(n-1)
+    ##Loading the graph from file
 
-num_vertex_pairs = num_nodes*(num_nodes-1)
-print("Number of vertex pairs: ",num_vertex_pairs)
-
-
-# Calculating Number of edge pairs =  m(m-1)
-
-num_edge_pairs = num_edges*(num_edges-1)
-print("Number of edge pairs: ",num_edge_pairs)
+    G_ig = ig.Graph.Read(file, format="graphml")
 
 
-# Get the degrees of all vertices
-degrees = G_ig.degree()
+    # Get the number of nodes (vertices)
 
-# Calculate the average degree
-average_degree = sum(degrees) / len(degrees)
-print("The average degree of the network is: ", average_degree)
+    num_nodes = G_ig.vcount()
+    print("Number of nodes: ", num_nodes)
 
 
-#probability of connection
-poc = average_degree / (num_nodes - 1)
-print("The Probability of the connection in the network is: ", poc)
+    # Get the number of edges
+
+    num_edges = G_ig.ecount()
+    print("Number of edges: ", num_edges)
 
 
-## Calculates shortest path lengths for given vertices in a graph. If None, all vertices will be considered.
+    #Calculating Meshedness coefficient(alpha)
 
-tic = time()
-shortest_path_lengths_matrix = G_ig.distances(weights='weight', algorithm='dijkstra')
-toc = time()
-
-print(f"Time taken to calculate shortest_path_lengths_matrix using dijkstra algorithm is {toc - tic} seconds")
-
-# Save list of list to a file using pickle
-
-#with open('Dehradun_street_network_shortest_path_lengths_matrix.pkl', 'wb') as file:
-#    pickle.dump(shortest_path_lengths_matrix, file)
+    alpha = (num_edges - num_nodes + 1)/(2*num_nodes - 5)
+    print("The value of messhedness coefficient(alpha) is : ", alpha)
 
 
-#Calculating the sum of inverse for all values
+    # Calculating Number of vertex pairs =  n(n-1)
 
-inverse_sum = find_eff(shortest_path_lengths_matrix)
-
-
-#Calculating the efficiency of the network
-
-efficiency = (1/num_vertex_pairs)*inverse_sum
-print("Efficiency of the network is: ", efficiency)
+    num_vertex_pairs = num_nodes*(num_nodes-1)
+    print("Number of vertex pairs: ",num_vertex_pairs)
 
 
-#Creating adjacency matrix
+    # Calculating Number of edge pairs =  m(m-1)
 
-#adj_matrix_G = G_ig.get_adjacency()
+    num_edge_pairs = num_edges*(num_edges-1)
+    print("Number of edge pairs: ",num_edge_pairs)
 
-# Save list of list to a file using pickle
 
-#with open('Dehradun_street_network_adjacency_matrix.pkl', 'wb') as file:
-#    pickle.dump(adj_matrix_G, file)
+    # Get the degrees of all vertices
+    degrees = G_ig.degree()
+
+    # Calculate the average degree
+    average_degree = sum(degrees) / len(degrees)
+    print("The average degree of the network is: ", average_degree)
+
+
+    #probability of connection
+    poc = average_degree / (num_nodes - 1)
+    print("The Probability of the connection in the network is: ", poc)
+
+
+    ## Calculates shortest path lengths for given vertices in a graph. If None, all vertices will be considered.
+
+    tic = time()
+    shortest_path_lengths_matrix = G_ig.distances(weights='weight', algorithm='dijkstra')
+    toc = time()
+
+    print(f"Time taken to calculate shortest_path_lengths_matrix using dijkstra algorithm is {toc - tic} seconds")
+
+
+
+    #Calculating the sum of inverse for all values
+
+    inverse_sum = find_eff(shortest_path_lengths_matrix)
+
+
+    #Calculating the efficiency of the network
+
+    efficiency = (1/num_vertex_pairs)*inverse_sum
+    print("Efficiency of the network is: ", efficiency)
+
+    ##Placeholder for different files
+    print("#########################################################################################################")
+    print()
+
 
 
 ##Timing the program
