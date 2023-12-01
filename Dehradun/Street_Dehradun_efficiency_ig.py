@@ -67,8 +67,8 @@ print(f"Time taken to calculate shortest_path_lengths_matrix using dijkstra algo
 
 # Save list of list to a file using pickle
 
-with open('Dehradun_street_network_shortest_path_lengths_matrix.pkl', 'wb') as file:
-    pickle.dump(shortest_path_lengths_matrix, file)
+#with open('Dehradun_street_network_shortest_path_lengths_matrix.pkl', 'wb') as file:
+#    pickle.dump(shortest_path_lengths_matrix, file)
 
 
 #Calculating the sum of inverse for all values
@@ -86,12 +86,12 @@ print("Efficiency of the network is: ", efficiency)
 
 #Creating adjacency matrix
 
-adj_matrix_G = G_ig.get_adjacency()
+#adj_matrix_G = G_ig.get_adjacency()
 
 # Save list of list to a file using pickle
 
-with open('Dehradun_street_network_adjacency_matrix.pkl', 'wb') as file:
-    pickle.dump(adj_matrix_G, file)
+#with open('Dehradun_street_network_adjacency_matrix.pkl', 'wb') as file:
+#    pickle.dump(adj_matrix_G, file)
 
 
 ##Timing the program
