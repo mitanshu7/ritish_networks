@@ -32,15 +32,15 @@ alpha = (num_edges - num_nodes + 1)/(2*num_nodes - 5)
 print("The value of messhedness coefficient(alpha) is : ", alpha)
 
 
-# Calculating Number of vertex pairs =  n(n-1)/2 
+# Calculating Number of vertex pairs =  n(n-1)
 
-num_vertex_pairs = num_nodes*(num_nodes-1)/2.0
+num_vertex_pairs = num_nodes*(num_nodes-1)
 print("Number of vertex pairs: ",num_vertex_pairs)
 
 
-# Calculating Number of edge pairs =  m(m-1)/2 
+# Calculating Number of edge pairs =  m(m-1)
 
-num_edge_pairs = num_edges*(num_edges-1)/2.0
+num_edge_pairs = num_edges*(num_edges-1)
 print("Number of edge pairs: ",num_edge_pairs)
 
 
@@ -60,7 +60,7 @@ print("The Probability of the connection in the network is: ", poc)
 ## Calculates shortest path lengths for given vertices in a graph. If None, all vertices will be considered.
 
 tic = time()
-shortest_path_lengths_matrix = G_ig.distances(algorithm='dijkstra')
+shortest_path_lengths_matrix = G_ig.distances(weights='weight', algorithm='dijkstra')
 toc = time()
 
 print(f"Time taken to calculate shortest_path_lengths_matrix using dijkstra algorithm is {toc - tic} seconds")
